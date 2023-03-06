@@ -1,0 +1,8 @@
+{
+    "name": "Graph",
+
+    "tree": {
+        "$className": "ModuleScript",
+        "$path": "src"
+    }
+}
