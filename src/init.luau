@@ -64,10 +64,18 @@ function Graph:GetNodes(): {[Node]: {Edge}}
 end
 
 function Graph:GetEdges(node: Node): {Edge}
-    return if self._edges[node] then self._edges[node] else {}
+    if not self._edges[node] then
+        return {}
+    end
+
+    return self._edges[node]
 end
 
 function Graph:GetEdge(node1: Node, node2: Node): Edge
+    if not self._edges[node1] then
+        return nil
+    end
+
     return self._edges[node1][node2]
 end
 
